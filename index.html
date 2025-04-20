@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -11,6 +10,30 @@
       integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
       crossorigin="anonymous"
     />
+    <style>
+      body {
+        display: flex;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 10px;
+        margin-left: 20%;
+        background-color: #f4f4f4;
+      }
+
+      #clock {
+        height: 300px;
+        width: 300px;
+        position: relative;
+        display: inline;
+        font-size: 48px;
+        color: #333;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        display: inline-block;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+    </style>
   </head>
   <body>
     <div class="card" style="width: 18rem">
@@ -20,7 +43,6 @@
         alt="..."
       />
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
         <p class="card-text">
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
@@ -33,33 +55,28 @@
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
       crossorigin="anonymous"
     ></script>
+    <!DOCTYPE html>
+    <div>
+      <div id="clock">00:00:00</div>
+      <h2 style="position: absolute; margin-top: 0px">Digital Clock</h2>
+    </div>
+    <script>
+      function updateClock() {
+        const now = new Date();
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        let seconds = now.getSeconds();
+        // Add leading zeros
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        const timeString = hours + ":" + minutes + ":" + seconds;
+        document.getElementById("clock").textContent = timeString;
+      }
+      // Update clock every second
+      setInterval(updateClock, 1000);
+      // Initial call
+      updateClock();
+    </script>
   </body>
-=======
-<html>
-<head>
-    <title>inline</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About Us</a></li>
-          <li><a href="/products">Our Products</a></li>
-          <li><a href="/contact">Contact Us</a></li>
-        </ul>
-      </nav>
-      <form action="/submit" method="post">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name"><br><br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br><br>
-
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
-
-        <input type="submit" value="Submit">
-      </form>
-</body>
->>>>>>> f64c402a04e2a817d577b98bfd1b2d22cf3ef348
 </html>
